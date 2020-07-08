@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Badge from 'react-bootstrap/Badge'
 
 export default function MainArticle(props) {
     return (
@@ -12,7 +13,7 @@ export default function MainArticle(props) {
                 />
             </div>
             <div>
-                <small>RESILIENCE, INNOVATION + CYBER SECURITY | FEB 14</small>
+                <small><Badge variant="info">RESILIENCE, INNOVATION + CYBER SECURITY</Badge> | FEB 14</small>
                 <h3>UN Encourages Action On Human Rights Through Its CEO Roundtables</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <small>by Charlie Shea</small>
@@ -27,7 +28,7 @@ export default function MainArticle(props) {
                 />
             </div>
             <div>
-                <small>CAPITAL MARKETS | FEB 1</small>
+                <small><Badge variant="info">CAPITAL MARKETS</Badge> | FEB 1</small>
                 <h3>Creating A Unified Vision</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <small>by Charlie Shea</small>
@@ -42,7 +43,7 @@ export default function MainArticle(props) {
                 />
             </div>
             <div>
-                <small>CSR & SUSTAINABILITY I FEB 1</small>
+                <small><Badge variant="info">CSR & SUSTAINABILITY</Badge> I FEB 1</small>
                 <h3>‘Impact Beyond Numbers’ — GoodWeave’s Global Solution To Child Labor </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <small>by Charlie Shea</small>
@@ -57,7 +58,7 @@ export default function MainArticle(props) {
                 />
             </div>
             <div>
-                <small>ACTIVISM I JAN 31</small>
+                <small><Badge variant="info">ACTIVISM</Badge> I JAN 31</small>
                 <h3>Marriott International Leads Collaboration To Curb Forced Labor </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <small>by Charlie Shea</small>

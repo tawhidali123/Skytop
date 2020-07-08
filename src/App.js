@@ -1,12 +1,16 @@
 import React from 'react';
-import Navigation from './components/Navigation';
+import {Route, Switch, Link} from 'react-router-dom';
+
 import Home from './components/Home';
+import Activism from './components/Activism'
 
 function App() {
   return (
     <div style={{margin: '3vh'}}>
-      <Navigation />
-      <Home />
+      <Switch>
+        <Route path='/' exact render={(routerProps) => <Home routerProps={routerProps} />} />
+        <Route path='/activism' render={(routerProps) => <Activism routerProps={routerProps} />} />
+      </Switch>  
     </div>
   );
 }

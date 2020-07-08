@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {GrCart} from 'react-icons/gr';
 import {BsSearch} from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export default function Navigation(props) {
     return (
@@ -11,9 +12,11 @@ export default function Navigation(props) {
                 top: '0', 
                 zIndex: '100',
                 backgroundColor: 'white'
-                }}>
+            }}>
             <div className='logo' style={{display: 'flex'}}>
-                <img src='https://skytopstrategies.com/wp-content/uploads/2016/09/skytop_logo210x70-1.png'/>
+                <Link to='/'>
+                    <img src='https://skytopstrategies.com/wp-content/uploads/2016/09/skytop_logo210x70-1.png'/>
+                </Link>
                 <Nav style={{marginLeft: '60%'}}>
                     <Nav.Item as="li">
                         <Nav.Link>About Us</Nav.Link>
@@ -26,8 +29,10 @@ export default function Navigation(props) {
 
             <div className='links'>
                 <Nav>
-                    <Nav.Item as="li">
-                        <Nav.Link>ACTIVISM</Nav.Link>
+                    <Nav.Item as="li">              
+                        <Nav.Link>
+                            <Link to='/activism'>ACTIVISM</Link>
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
                         <Nav.Link>CSR & SUSTAINABILITY</Nav.Link>

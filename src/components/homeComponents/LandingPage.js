@@ -13,7 +13,7 @@ export default function LandingPage(props) {
                         <img
                         height={'500px'}
                         className="d-block w-100"
-                        src="https://lh3.googleusercontent.com/proxy/5qT6Qcf9XXDwIihcv2TjERdY3gZlkziKxzh1ZM-5BAmFFLk-y_hBCsvM9gExxULNy8T-jJrsflbezIbrJkl8Ib-wZWWfWCa7SVs"
+                        src="https://www.shediacbayassociation.org/wp-content/uploads/2016/07/Blank-slider.jpg"
                         alt="First slide"
                         />
                 
@@ -27,7 +27,7 @@ export default function LandingPage(props) {
                         <img
                         height={'500px'}
                         className="d-block w-100"
-                        src="https://lh3.googleusercontent.com/proxy/ChSTMPTA2h-YZ9uS8gnbkNvxaboHjiUGb3PhURV6DslV3SIGviJ0lv3yQD94l8VYAaIb1zre-MbDMX-2UVvRyjnVi4u6dusJB59yV_XjTcWR9CZQRIO-ORQ"
+                        src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
                         alt="Second slide"
                         />
 
