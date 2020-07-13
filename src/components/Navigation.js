@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import {GrCart} from 'react-icons/gr';
 import {BsSearch} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import logo from '../images/skytop-logo-white.jpg'
 
 export default function Navigation(props) {
     return (
@@ -15,9 +16,11 @@ export default function Navigation(props) {
             }}>
             <div className='logo' style={{display: 'flex'}}>
                 <Link to='/'>
-                    <img src='https://skytopstrategies.com/wp-content/uploads/2016/09/skytop_logo210x70-1.png'/>
+                    <div style={{width: '30vw', height: '10vh'}}>
+                        <img src={logo} style={{width: '30vw', height: '10vh'}} />
+                    </div>
                 </Link>
-                <Nav style={{marginLeft: '60%'}}>
+                <Nav style={{marginLeft: '45%'}}>
                     <Nav.Item as="li">
                         <Nav.Link>About Us</Nav.Link>
                     </Nav.Item>
