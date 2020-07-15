@@ -1,17 +1,18 @@
 import React from 'react'
+import {Container} from 'react-bootstrap';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import styled from 'styled-components';
 
 export default function UpcomingConf(props) {
     return (
-        <div>
+        <Wrapper>
+        <Container style={{margin: '0'}}>
             <div style={{margin: '15px'}}>
                 <small>UPCOMING CONFERENCES <a href='#'>See All</a></small>
             </div>
 
-            <div>
-                <small>JANUARY 23, 2020 IN FRANKFURT, GERMANY</small>
-                <h4>Shareholder Activism & Engagement Germany</h4>
-                <p>For Management, Boards and Institutional Shareholders</p>
-            </div>
+            
 
             <div>
                 <small>NOVEMBER 19, 2019 IN NEW YORK, NY</small>
@@ -45,6 +46,12 @@ export default function UpcomingConf(props) {
 
             <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
             
-        </div>
+        </Container>
+        </Wrapper>
     )
 }
+
+
+const Wrapper = styled.div`
+
+`

@@ -5,6 +5,11 @@ import LandingPage from './homeComponents/LandingPage'
 import MainArticle from './homeComponents/MainArticle'
 import Footer from './Footer'
 
+import SideBar from './homeComponents/SideBar'
+import {Container} from 'react-bootstrap';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 export default function Home(props) {
 
     useEffect(() => {
@@ -18,10 +23,22 @@ export default function Home(props) {
     return (
         <Wrapper>
             <Navigation />
-            <LandingPage />
-            <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
-            <MainArticle />
-            <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
+            
+            <Container fluid style={{margin: '0'}}>
+                <Row style={{margin: '10px 0'}}>
+                    <Col lg={9}>
+                        <LandingPage />
+                        <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
+                        <MainArticle />
+                    </Col>
+                    <Col lg={3}>
+                        <SideBar />
+                    </Col>
+                </Row>
+
+                <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
+            </Container>
+            
             <Footer />
         </Wrapper>
     )
@@ -29,5 +46,4 @@ export default function Home(props) {
 
 
 const Wrapper = styled.div`
-    
 `

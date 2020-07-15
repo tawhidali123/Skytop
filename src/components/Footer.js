@@ -31,8 +31,6 @@ export default function Footer(props) {
 }
 
 const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: 50% 50%;
     background: rgba(7, 36, 79, 1);
     color: rgba(217, 217, 217, 1);
     padding: 10px;
@@ -47,13 +45,13 @@ const Wrapper = styled.div`
     }
 
     .main {
-        width: 35vw;
+        width: 35%;
         margin: 10px;
     }
 
     .links{
         float: right;
-        width: 40vw;
+        width: 40%;
     }
 
 `
