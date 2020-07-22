@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchPosts, singlePost} from '../../redux/actions/postActions'
+
+
 import styled from 'styled-components';
 import Carousel from 'react-bootstrap/Carousel';
 import HighlightArticle from './HighlightArticle'
@@ -6,61 +10,84 @@ import SideBar from './SideBar'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Badge from 'react-bootstrap/Badge'
 
 export default function LandingPage(props) {
+
+    const state = useSelector(state => state.posts)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchPosts())
+        dispatch(singlePost())
+    }, [])
+
+
     return (
         <Wrapper>
         <Container style={{margin: '0'}}>
             <Row>
-                <Col xs={7}>
-                    <div className='slider' style={{marginTop: '15%'}}>
-                        <Carousel>
+                <Col xs={8}>
+                    <div className='slider' style={{marginTop: '8%'}}>
+                        <Carousel className='carousel-indicator'>
                             <Carousel.Item>
                                 <img
-                                className="d-block w-100"
-                                src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
-                                alt="First slide"
+                                    className="d-block w-100"
+                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
+                                    alt="First slide"
                                 />
                         
-                                <Carousel.Caption>
-                                <small>MARCH 26, 2020 IN NEW YORK, NY</small>
-                                <h2>First slide label</h2>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                    <div style={{textAlign: 'start', padding: '12px'}}>
+                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
+                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Impact Investing</h2>
+                                        <p style={{color: 'rgba(108,107,107)'}}>
+                                            Impact investing is growing into an attractive asset class to select asset owners and institutional investors. This program convenes experts and practice 
+                                            leaders on how impact investing is unfolding and how investors are able to develop their strategies effectively by focusing on the market rate of return.
+                                        </p>
+                                    </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
-                                className="d-block w-100"
-                                src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
-                                alt="Second slide"
+                                    className="d-block w-100"
+                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
+                                    alt="First slide"
                                 />
-
-                                <Carousel.Caption>
-                                <small>MARCH 26, 2020 IN NEW YORK, NY</small>
-                                <h2>Second slide label</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                    <div style={{textAlign: 'start', padding: '12px'}}>
+                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CSR & SUSTAINABILITY</Badge></small>
+                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
+                                        <p style={{color: 'rgba(108,107,107)'}}>The Skytop Strategies team is dedicated to crafting thought provoking
+                                            agendas that are diverse, not only in areas of thought and experience,
+                                            but in the broad range of attending speakers.
+                                        </p>
+                                    </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
-                                className="d-block w-100"
-                                src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
-                                alt="Third slide"
+                                    className="d-block w-100"
+                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
+                                    alt="First slide"
                                 />
-
-                                <Carousel.Caption>
-                                <small>MARCH 26, 2020 IN NEW YORK, NY</small>
-                                <h2>Third slide label</h2>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        
+                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                    <div style={{textAlign: 'start', padding: '12px'}}>
+                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>ACTIVISM</Badge></small>
+                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
+                                        <p style={{color: 'rgba(108,107,107)'}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
                     </div>
                 </Col>
 
-                <Col xs={5}>
+                <Col xs={4}>
                     <div className='highLightArticle' >
-                        <HighlightArticle />
+                        <HighlightArticle state={state} />
                     </div>
                 </Col>
             </Row>
@@ -71,6 +98,29 @@ export default function LandingPage(props) {
 
 
 const Wrapper = styled.div`
-    
+    font-family: 'Work Sans', sans-serif;
+
+    .carousel-indicator li {
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: #17a2b8;  
+    }
+
+    .carousel-caption{
+        position: static;
+        margin-top: 10px;
+
+    }
+
+        
+    h2{
+        font-weight: 900;
+    }
+
+    p{
+        font-family: 'PT Serif', serif;
+    }
+
     
 `

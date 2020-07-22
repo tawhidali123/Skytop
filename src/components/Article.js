@@ -1,10 +1,15 @@
 import React,{useState, useEffect} from 'react'
+import ReactMarkdown from 'react-markdown'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     useParams
   } from "react-router-dom";
+
+import Navigation from './Navigation'
+import Footer from './Footer'
+
 
 export default function Article(props) {
 
@@ -26,12 +31,14 @@ export default function Article(props) {
 
     return (
         <div>
+            <Navigation />
             <h1>
                 {state.title}
             </h1>
-            <p>
-                {state.body}
-            </p>
+            <div>
+                <ReactMarkdown>{state.body}</ReactMarkdown>
+            </div>
+            <Footer />
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Route, Switch, Link} from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -31,7 +32,7 @@ export default function Main(props) {
                 
                 <Row>
                     <Col lg={12}>
-                    <a href={`/article/1`}>
+                        <a href={`/article/1`}>
                         <div style={{marginRight: '25px'}}>
                             <div style={{marginBottom: '15px'}}>
                                 <img src='https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/miscemptyroom-ploy-room-type1-light1-12.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=4cfbfc580e13ee4040af1ef61ca48276' />
@@ -67,7 +68,7 @@ export default function Main(props) {
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                             <small>by Charlie Shea</small>
                                         </div>
-                                        </a>
+                                    </a>
                                     </Col>
                                 </Row>
 
