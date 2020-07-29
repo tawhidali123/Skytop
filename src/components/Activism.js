@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
-import Main from './articleComponents/Main'
+import Main from './sectionComponents/Main'
 import SideBar from './homeComponents/SideBar'
 
 export default function Activism(props) {

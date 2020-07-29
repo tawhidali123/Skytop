@@ -24,9 +24,9 @@ export default function Home(props) {
                 
                 <Row style={{margin: '10px 0'}}>
                     <Col lg={9}>
-                        <div style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '5px'}}>
+                        <div style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}}>
                             <LandingPage />
-                            <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '5px', margin: '1em 3em 2em 0'}} />
+                            <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px', margin: '1em 3em 2em 0'}} />
                             <MainArticle />
                         </div>
                     </Col>
@@ -37,7 +37,7 @@ export default function Home(props) {
                 </Row>
                 
 
-                <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
+                <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}} />
             </Container>
             
             <Footer />
