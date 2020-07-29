@@ -11,19 +11,19 @@ export default function HighlightArticle(props) {
             <Container style={{marginTop: '10%'}}> 
                 <Row>
                     <Col>
-                        <h4 style={{fontWeight: 'bolder'}}>Features</h4>
+                        <h4 style={{fontWeight: 'bold'}}>Features</h4>
                     </Col>
                 </Row>   
                 {
-                    props.state.items.slice(1,4).map((item) => { 
-                    
+                    props.state.items.slice(0,3).map((item) => { 
+                        console.log(item)
                         return <Row>
                                 <Col>
                                     <a href={`/article/${item.articles[0].id}`}>
                                     <div>
                                         <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>{item.name}</Badge></small>
-                                        <h4 className='title'>{item.articles[0].title}</h4>
-                                        <p className='description'>{item.articles[0].description}</p>
+                                        <h5 className='title' style={{fontWeight: 'bold'}}>{item.articles[0].title}</h5>
+                                        {/* <p className='description'>{item.articles[0].description}</p> */}
                                         <small className='author'>by {item.articles[0].author}</small>
                                         <br />
                                         <small className='date'>March 27, 2020</small>
@@ -51,7 +51,7 @@ a{
 
 }
 
-h4{
+h5{
     color: rgba(0,0,0,1);
 }
 

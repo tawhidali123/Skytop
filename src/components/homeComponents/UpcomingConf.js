@@ -51,7 +51,7 @@ export default function UpcomingConf(props) {
                     </Col>
                 </Row>
         
-                <hr style={{borderTop: '5px solid #bbb', borderRadius: '5px'}} />
+                <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}} />
                 
             </Container>
         </Wrapper>
@@ -67,6 +67,7 @@ const Wrapper = styled.div`
         background: url(https://s3.envato.com/files/232476805/image.jpg);
         background-repeat: no-repeat;
         background-size: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         color: rgba(255,255,255,1);
 
@@ -81,6 +82,7 @@ const Wrapper = styled.div`
         background: url(https://wallup.net/wp-content/uploads/2015/12/134284-abstract-748x421.jpg);
         background-repeat: no-repeat;
         background-size: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         color: rgba(255,255,255,1);
 
@@ -95,6 +97,7 @@ const Wrapper = styled.div`
         background: url(https://st3.depositphotos.com/1357262/18191/v/600/depositphotos_181914472-stock-video-computer-network-plexus-abstract-network.jpg);
         background-repeat: no-repeat;
         background-size: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         color: rgba(255,255,255,1);
 

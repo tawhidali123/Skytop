@@ -1,46 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
-import Card from 'react-bootstrap/Card'
-import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import {Container} from 'react-bootstrap';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default function Email(props) {
     return (
-        <div style={{
-            marginTop: '3em'
-        }}>
-            <Card
-                bg={'warning'}
-                text={'light'}
-                style={{}}
-                className="mb-2"
-            >
-                <Card.Header>Join Our Email List</Card.Header>
-                <Card.Body>
-                    <Card.Title> Stay In Touch! </Card.Title>
-                    <Card.Text>
-                        Get on the Skytop mailing list to
-                        receive notification of new Forbes
-                        articles, Skytop video interviews,
-                        conference updates, special offers,
-                        new products and more.
-                    </Card.Text>
+        <Wrapper style={{marginTop: '3em'}}>
+           <Container>
+               <Row>
+                   <Col>
+                       <h3 style={{fontWeight: 'bold'}}>Get News Feeds</h3>
+                   </Col>
+               </Row>
 
-                    <div>
-                        <FormControl
-                        placeholder="Username@example.com"
-                        aria-label="Username"
-                        />
-                        <br />
-                        
-                        <Button style={{marginRight: '50%'}} >Subscribe</Button>
-                        <br />
-                        <small>By clicking ‘subscribe’, I agree to Skytop’s lorem ipsum</small>
-                    </div>
-                    
+               <Row>
+                   <Col>
+                       <p>Subscribe to get the latest updates.</p>
+                   </Col>
+               </Row>
 
-                </Card.Body>
-            </Card>
-        </div>
+               <Row>
+                   <Col>
+                       <input type='text' placeholder='Example@email.com' />
+                       <Button variant="warning" size="md" style={{width: '100%', marginTop: '3%'}}>Subscribe</Button>
+                   </Col>
+               </Row>
+           </Container> 
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+font-family: 'Work Sans', sans-serif;
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgba(166,166,166,.4);
+}
+`

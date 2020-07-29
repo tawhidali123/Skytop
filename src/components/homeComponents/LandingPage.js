@@ -31,13 +31,15 @@ export default function LandingPage(props) {
                     <div className='slider' style={{marginTop: '8%'}}>
                         <Carousel className='carousel-indicator'>
                             <Carousel.Item>
-                                <img
+                                <div>
+                                    <img
                                     className="d-block w-100"
                                     src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
                                     alt="First slide"
                                 />
+                                </div>
                         
-                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
                                     <div style={{textAlign: 'start', padding: '12px'}}>
                                         <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
                                         <h2 style={{color: 'rgba(0,0,0,1)'}}>Impact Investing</h2>
@@ -49,13 +51,15 @@ export default function LandingPage(props) {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img
+                                <div>
+                                    <img
                                     className="d-block w-100"
                                     src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
                                     alt="First slide"
                                 />
+                                </div>
                         
-                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
                                     <div style={{textAlign: 'start', padding: '12px'}}>
                                         <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CSR & SUSTAINABILITY</Badge></small>
                                         <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
@@ -67,13 +71,15 @@ export default function LandingPage(props) {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img
+                                <div>
+                                    <img
                                     className="d-block w-100"
                                     src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
                                     alt="First slide"
                                 />
+                                </div>
                         
-                                <Carousel.Caption className='carousel-caption' style={{height: '31vh'}}>
+                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
                                     <div style={{textAlign: 'start', padding: '12px'}}>
                                         <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>ACTIVISM</Badge></small>
                                         <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
@@ -120,6 +126,10 @@ const Wrapper = styled.div`
 
     p{
         font-family: 'PT Serif', serif;
+    }
+
+    .slider {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     
