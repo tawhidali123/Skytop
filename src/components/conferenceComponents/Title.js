@@ -1,42 +1,132 @@
-import React from 'react'
+import React,{useState, useEffect, useRef} from 'react'
+import ReactMarkdown from 'react-markdown'
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+
 import styled from 'styled-components'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
+
+
 
 export default function Title(props) {
+
+    const renderTime = ({ remainingTime }) => {
+        if(remainingTime === 0) {
+            return (<p style={{color: 'white'}}>Today is the Event!!</p>)
+        }
+        const days = Math.floor(remainingTime / 86400)
+        const hours = Math.floor(remainingTime / 3600)
+        const minutes = Math.floor((remainingTime % 3600) / 60)
+        const seconds = remainingTime % 60
+      
+        // return `${days}:${hours}:${minutes}:${seconds}`
+
+        return (<div>
+            <h4>{`${days}:${hours}:${minutes}:${seconds}`}</h4>
+        </div>)
+    }
+
     return (
         <Wrapper>
             <Container>
+                {/* Image/counter section */}
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                         <div className='conference1' >
-                            <div>
-                                <button>Register</button>
-                                <div>
-                                    <p>00:45:11</p>
+                            <div style={{}}>
+                                <div style={{}}>
+                                    <Button variant='primary' style={{float: 'right', width: '20%'}}>Register</Button>
+                                </div>
+                                <div style={{width: '100%'}}>
+                                    <div style={{marginLeft: '10%'}}>
+                                        <CountdownCircleTimer
+                                            isPlaying
+                                            duration={60}
+                                            colors={[
+                                            ['#C8B210', 0.33],
+                                            ['#F7B801', 0.33],
+                                            ['#A30000', 0.33],
+                                            ]}
+                                        >
+                                            {renderTime}
+                                            
+                                        </CountdownCircleTimer>
+                                    </div>
                                 </div>
                             </div>
-                            <div style={{margin: '25% 25% 3% 3%'}}>
-                                <h4>Shareholder Activism Summit</h4>
-                                <p>Unlocking Shareholder Value</p>
-                                <small>NOVEMBER 19, 2020 IN NEW YORK, NY</small>
+
+                            <div style={{margin: '22% 25% 3% 3%'}}>
+                                <h4>{props.state.Name}</h4>
+                                <p>{props.state.summary}</p>
+                                <small>{props.state.Date} IN {props.state.Address}</small>
                             </div>
                         </div>
                     </Col>
                 </Row>
 
+                {/* Engage,Discover,Apply Section */}
                 <Row>
                     <Col>
-                        <div>Engage</div>
+                        <div>
+                            <h3>Engage</h3>
+                            <p>{props.state.Engage}</p>
+                        </div>
                     </Col>
                     <Col>
-                        <div>Discover</div>
+                        <div>
+                            <h3>Discover</h3>
+                            <p>{props.state.Discover}</p>
+                        </div>
                     </Col>
                     <Col>
-                        <div>Apply</div>
+                        <div>
+                            <h3>Apply</h3>
+                            <p>{props.state.Apply}</p>
+                        </div>
                     </Col>
                 </Row>
+
+                {/* Conference tab section */}
+                <Row style={{marginTop: '10%'}}>
+                    <Col>
+                        <Tabs defaultActiveKey="agenda" id="uncontrolled-tab-example" style={{marginBottom: '5%'}}>
+                            <Tab eventKey="about" title="About">
+                                <ReactMarkdown>
+                                    {props.state.Description}
+                                </ReactMarkdown>
+                            </Tab>
+                            <Tab eventKey="agenda" title="Agenda">
+                                <ReactMarkdown>
+                                    {props.state.Agenda}
+                                </ReactMarkdown>
+                            </Tab>
+                            <Tab eventKey="sponsors" title="Sponsors">
+                                {
+                                    props.imgUrl.map(img => {
+                                        return(
+                                            <img src={`http://localhost:1337${img.url}`} />
+                                        )
+                                    })
+                                }
+                            </Tab>
+                            <Tab eventKey="speakers" title="Speakers">
+                                <ReactMarkdown>
+                                    {props.state.Speakers}
+                                </ReactMarkdown>
+                            </Tab>
+                            <Tab eventKey="delegates" title="Delegates">
+                                <ReactMarkdown>
+                                    {props.state.Delegates}
+                                </ReactMarkdown>
+                            </Tab>
+                        </Tabs>
+                    </Col>
+                </Row>
+
             </Container>
         </Wrapper>
     )
