@@ -17,20 +17,26 @@ export default function UpcomingConf(props) {
 
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
+                    
                         <div className='conference1'>
-                            <h4>Shareholder Activism Summit</h4>
-                            <p>Unlocking Shareholder Value</p>
-                            <small>NOVEMBER 19, 2020 IN NEW YORK, NY</small>
+                        <a href={`/conference/3`}>
+                            <h4>Shareholder Engagement & Communication London</h4>
+                            <p>Constructive Strategies for Issuers</p>
+                            <small>October 7, 2020 IN LONDON, UNITED KINGDOM</small>
+                        </a>
                         </div>
+                    
                     </Col>
                 </Row>
 
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                         <div className='conference2'>
-                            <h4>Sustainability & Risk Management</h4>
-                            <p>For Sustainability, Risk, Practice and Subject Matter Experts</p>
-                            <small>OCTOBER 24, 2020 IN ARLINGTON, VA</small>
+                        <a href={`/conference/2`}>
+                            <h4>Impact Investing</h4>
+                            <p>Driving Social Purpose Through Measurable Investment Returns</p>
+                            <small>September 17, 2020 IN BOSTON, MA</small>
+                        </a>
                         </div>
                     </Col>
                 </Row>
@@ -38,9 +44,11 @@ export default function UpcomingConf(props) {
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                         <div className='conference3'>
-                            <h4>ESG Integration Summit</h4>
+                        <a href={`/conference/1`}>
+                            <h4>Water & Long-Term Value Summit</h4>
                             <p>Framework for Creating a Diverse and Dynamic Marketplace</p>
-                            <small>OCTOBER 17, 2020 IN STOCKHOLM, SWEDEN</small>
+                            <small>September 1, 2020 IN Indian Springs Calistoga 1712 Lincoln Ave Calistoga, CA</small>
+                        </a>
                         </div>
                     </Col>
                 </Row>

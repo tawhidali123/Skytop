@@ -16,7 +16,19 @@ import Col from 'react-bootstrap/Col'
 
 export default function Conference(props) {
 
+    let [state, setState] = useState([])
+    let [imgUrl, setImgUrl] = useState([]) 
+    let { slug } = useParams();
 
+    useEffect(() => {
+        fetch(`http://localhost:1337/conferences/${slug}`)
+        .then(resp => resp.json())
+        .then(res => {
+            console.log(res)
+            setState(res)
+            setImgUrl(res.Sponsors)
+        })
+    }, [])
 
     return (
         <Wrapper>
@@ -25,7 +37,7 @@ export default function Conference(props) {
             <Container>
                 <Row>
                     <Col lg={9}>
-                        <Title />
+                        <Title state={state} imgUrl={imgUrl} />
                     </Col>
 
                     <Col lg={3}>
