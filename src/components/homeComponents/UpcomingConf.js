@@ -19,7 +19,7 @@ export default function UpcomingConf(props) {
                     <Col>
                     
                         <div className='conference1'>
-                        <a href={`/conference/3`}>
+                        <a href={`/conference/3`} style={{textDecoration: 'none', color: 'white'}}>
                             <h4>Shareholder Engagement & Communication London</h4>
                             <p>Constructive Strategies for Issuers</p>
                             <small>October 7, 2020 IN LONDON, UNITED KINGDOM</small>
@@ -32,7 +32,7 @@ export default function UpcomingConf(props) {
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                         <div className='conference2'>
-                        <a href={`/conference/2`}>
+                        <a href={`/conference/2`} style={{textDecoration: 'none', color: 'white'}}>
                             <h4>Impact Investing</h4>
                             <p>Driving Social Purpose Through Measurable Investment Returns</p>
                             <small>September 17, 2020 IN BOSTON, MA</small>
@@ -44,7 +44,7 @@ export default function UpcomingConf(props) {
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                         <div className='conference3'>
-                        <a href={`/conference/1`}>
+                        <a href={`/conference/1`} style={{textDecoration: 'none', color: 'white'}}>
                             <h4>Water & Long-Term Value Summit</h4>
                             <p>Framework for Creating a Diverse and Dynamic Marketplace</p>
                             <small>September 1, 2020 IN Indian Springs Calistoga 1712 Lincoln Ave Calistoga, CA</small>
@@ -75,6 +75,7 @@ const Wrapper = styled.div`
         background: url(https://s3.envato.com/files/232476805/image.jpg);
         background-repeat: no-repeat;
         background-size: auto;
+        text-decoration: none;
 
         color: rgba(255,255,255,1);
 

@@ -39,7 +39,7 @@ export default function Title(props) {
                         <div className='conference1' >
                             <div style={{}}>
                                 <div style={{}}>
-                                    <Button variant='primary' style={{float: 'right', width: '20%'}}>Register</Button>
+                                    <Button variant='primary' style={{float: 'right', width: '35%'}}>Register</Button>
                                 </div>
                                 <div style={{width: '100%'}}>
                                     <div style={{marginLeft: '10%'}}>

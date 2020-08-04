@@ -16,15 +16,21 @@ export default function Navigation(props) {
         <Wrapper>
             <Container fluid style={{margin: '0'}} className='container'>
                 <Row style={{padding: '1%'}}>
-                    <Col xs={4}>
+                    <Col xs={4} lg={4} style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}}>
                         <div style={{width: '100%'}}>
                             <Navbar.Brand href="/">
                                 <Image src={logo} fluid />
                             </Navbar.Brand>
                         </div>
-                        
                     </Col>
-                    <Col xs={8} style={{marginTop: '2%'}}>
+
+                    <Col xs={6} lg={6} >
+                        <div style={{marginTop: '5.75%'}}>
+                            <p style={{fontSize: 'small', color: 'rgba(61, 81, 92, 0.71)'}}>Where Corporate Insight and Disruptive Ideas Converge</p>
+                        </div>
+                    </Col>
+
+                    <Col xs={2} lg={2} style={{marginTop: '2%'}}>
                         <div style={{float: 'right'}}>
                             <div style={{float: 'left'}}>
                                 <GrCart style={{height: '120%', width: '120%'}}/>
