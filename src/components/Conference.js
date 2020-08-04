@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import Navigation from './Navigation'
 import Footer from './Footer'
 import Title from './conferenceComponents/Title'
+import ConferenceSideBar from './conferenceComponents/ConferenceSideBar'
 
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
@@ -41,7 +42,7 @@ export default function Conference(props) {
                     </Col>
 
                     <Col lg={3}>
-                        <h1>Join Us!</h1>
+                        <ConferenceSideBar state={state} />
                     </Col>
                 </Row>
             </Container>

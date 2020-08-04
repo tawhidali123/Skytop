@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../images/black-logo.png'
+import logo from '../images/skytop-logo-KO-FINAL.png'
 import {AiOutlineTwitter} from 'react-icons/ai'
 import {AiFillLinkedin} from 'react-icons/ai'
 import Image from 'react-bootstrap/Image'
