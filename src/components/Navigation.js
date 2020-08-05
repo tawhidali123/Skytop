@@ -33,10 +33,10 @@ export default function Navigation(props) {
                     <Col xs={2} lg={2} style={{marginTop: '2%'}}>
                         <div style={{float: 'right'}}>
                             <div style={{float: 'left'}}>
-                                <GrCart style={{height: '120%', width: '120%'}}/>
+                                <GrCart style={{}}/>
                             </div>
                             <div style={{float: 'right'}}>
-                                <BsSearch style={{height: '120%', width: '120%', marginLeft: '100%'}} />
+                                <BsSearch style={{marginLeft: '100%'}} />
                             </div>
                         </div>
                     </Col>
