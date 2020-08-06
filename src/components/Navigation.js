@@ -26,7 +26,7 @@ export default function Navigation(props) {
 
                     <Col xs={6} lg={6} >
                         <div style={{marginTop: '5.75%'}}>
-                            <p style={{fontSize: 'small', color: 'rgba(61, 81, 92, 0.71)'}}>Where Corporate Insight and Disruptive Ideas Converge</p>
+                            <p style={{fontSize: 'small', color: 'rgba(61, 81, 92, 0.71)', fontWeight: 'normal'}}>Where Corporate Insight and Disruptive Ideas Converge</p>
                         </div>
                     </Col>
 
