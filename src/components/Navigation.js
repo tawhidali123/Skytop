@@ -26,17 +26,17 @@ export default function Navigation(props) {
 
                     <Col xs={6} lg={6} >
                         <div style={{marginTop: '5.75%'}}>
-                            <p style={{fontSize: 'small', color: 'rgba(61, 81, 92, 0.71)'}}>Where Corporate Insight and Disruptive Ideas Converge</p>
+                            <p style={{fontSize: 'small', color: 'rgba(61, 81, 92, 0.71)', fontWeight: 'normal'}}>Where Corporate Insight and Disruptive Ideas Converge</p>
                         </div>
                     </Col>
 
                     <Col xs={2} lg={2} style={{marginTop: '2%'}}>
                         <div style={{float: 'right'}}>
                             <div style={{float: 'left'}}>
-                                <GrCart style={{height: '120%', width: '120%'}}/>
+                                <GrCart style={{}}/>
                             </div>
                             <div style={{float: 'right'}}>
-                                <BsSearch style={{height: '120%', width: '120%', marginLeft: '100%'}} />
+                                <BsSearch style={{marginLeft: '100%'}} />
                             </div>
                         </div>
                     </Col>

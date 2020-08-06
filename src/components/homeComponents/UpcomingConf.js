@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col'
 import styled from 'styled-components';
 import Badge from 'react-bootstrap/Badge'
 
+import Image1 from '../../images/timingstockr.jpg'
+
 export default function UpcomingConf(props) {
     return (
         <Wrapper>
@@ -72,7 +74,7 @@ const Wrapper = styled.div`
 
     .conference1 {
         padding: 25px;
-        background: url(https://s3.envato.com/files/232476805/image.jpg);
+        background: url(http://localhost:1337/uploads/financial_sector_banking_techonology_evolution_stability_bbva_1024x683_83583a7445.jpeg);
         background-repeat: no-repeat;
         background-size: auto;
         text-decoration: none;

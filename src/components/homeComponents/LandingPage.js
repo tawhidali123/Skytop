@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchPosts, singlePost} from '../../redux/actions/postActions'
 
-
 import styled from 'styled-components';
 import Carousel from 'react-bootstrap/Carousel';
 import HighlightArticle from './HighlightArticle'
@@ -15,12 +14,23 @@ import Badge from 'react-bootstrap/Badge'
 export default function LandingPage(props) {
 
     const state = useSelector(state => state.posts)
+    const [mutatedState, setMutatedState] = useState()
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchPosts())
-        dispatch(singlePost())
+        dispatch(singlePost(5))
     }, [])
+
+    useEffect(() => {
+        console.log('item change')
+        const holder = state.items.reduce((acc, curr) => {
+            let spaceConvert = curr.name.split(' ').join('').toLowerCase()
+            acc[spaceConvert] = curr
+            return acc
+        }, {})
+        console.log('holder= ', holder)
+    }, [state.items])
 
 
     return (
@@ -31,10 +41,11 @@ export default function LandingPage(props) {
                     <div className='slider' style={{marginTop: '8%'}}>
                         <Carousel className='carousel-indicator'>
                             <Carousel.Item>
+                            {console.log('=>',state)}
                                 <div>
                                     <img
                                     className="d-block w-100"
-                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
+                                    src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
                                     alt="First slide"
                                 />
                                 </div>
@@ -54,7 +65,7 @@ export default function LandingPage(props) {
                                 <div>
                                     <img
                                     className="d-block w-100"
-                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
+                                    src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
                                     alt="First slide"
                                 />
                                 </div>

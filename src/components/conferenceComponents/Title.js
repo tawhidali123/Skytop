@@ -59,7 +59,7 @@ export default function Title(props) {
                                 </div>
                             </div>
 
-                            <div style={{margin: '22% 25% 3% 3%'}}>
+                            <div style={{margin: '10% 25% 2% 3%'}}>
                                 <h4>{props.state.Name}</h4>
                                 <p>{props.state.summary}</p>
                                 <small>{props.state.Date} IN {props.state.Address}</small>
@@ -70,21 +70,21 @@ export default function Title(props) {
 
                 {/* Engage,Discover,Apply Section */}
                 <Row>
-                    <Col>
-                        <div>
-                            <h3>Engage</h3>
+                    <Col style={{border: '2px solid rgba(38,136,165,1)', borderRadius: '10px'}}>
+                        <div style={{padding: '5%'}}>
+                            <h5 style={{color: 'rgba(38,136,165,1)', fontWeight: 'bold'}}>Engage</h5>
                             <p>{props.state.Engage}</p>
                         </div>
                     </Col>
-                    <Col>
-                        <div>
-                            <h3>Discover</h3>
+                    <Col style={{border: '2px solid rgba(38,136,165,1)', borderRadius: '10px', margin: '0 3%'}}>
+                        <div style={{padding: '5%'}}>
+                            <h5 style={{color: 'rgba(38,136,165,1)', fontWeight: 'bold'}}>Discover</h5>
                             <p>{props.state.Discover}</p>
                         </div>
                     </Col>
-                    <Col>
-                        <div>
-                            <h3>Apply</h3>
+                    <Col style={{border: '2px solid rgba(38,136,165,1)', borderRadius: '10px'}}>
+                        <div style={{padding: '5%'}}>
+                            <h5 style={{color: 'rgba(38,136,165,1)', fontWeight: 'bold'}}>Apply</h5>
                             <p>{props.state.Apply}</p>
                         </div>
                     </Col>
@@ -137,7 +137,7 @@ const Wrapper = styled.div`
  font-family: 'Work Sans', sans-serif;
 
 .conference1 {
-    background: url(https://wallpaperhd.wiki/wp-content/uploads/1280x1024-wallpaper-trees-forest-top-view-120486-1280x1024.jpg);
+    background: url(http://localhost:1337/uploads/financial_sector_banking_techonology_evolution_stability_bbva_1024x683_83583a7445.jpeg);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100%;
