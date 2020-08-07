@@ -21,7 +21,7 @@ export default function MainArticle(props) {
                             </div>
                             <div>
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>RESILIENCE, INNOVATION + CYBER SECURITY</Badge></small>
-                                <h2>UN Encourages Action On Human Rights Through Its CEO Roundtables</h2>
+                                <h2>Impact Investing-Outlook for 2020 and Beyond</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                 <small>by Charlie Shea</small>
                                 <br />
