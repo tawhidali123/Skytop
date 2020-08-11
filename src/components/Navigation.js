@@ -45,11 +45,11 @@ export default function Navigation(props) {
                 <Row >
                     <Col xs={12}>
                         <ul>
-                            <li><a class="active"><Link to='/activism'>ACTIVISM</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>CSR & SUSTAINABILITY</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>INVESTMENT MANAGEMENT</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>CAPITAL MARKETS</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></a></li>
+                            <li><p><Link className='link' to='/activism'>ACTIVISM</Link></p></li>
+                            <li><p><Link className='link' to='/csrSustainability'>CSR & SUSTAINABILITY</Link></p></li>
+                            <li><p><Link className='link' to='/investmentManagement'>INVESTMENT MANAGEMENT</Link></p></li>
+                            <li><p><Link className='link' to='/capitalMarkets'>CAPITAL MARKETS</Link></p></li>
+                            <li><p><Link className='link' to='/resilienceInnovationCyber'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></p></li>
                         </ul>
                     </Col>
                 </Row>
@@ -82,7 +82,7 @@ li {
   float: left;
 }
 
-li a {
+li p {
   display: block;
   color: gray;
   text-align: center;
@@ -92,13 +92,16 @@ li a {
   color: rgba(0,0,0,1);
 }
 
-li a:hover {
-  color: rgba(0, 138, 153, 0.6);
+
+.link{
+  color: rgba(0,0,0,.7);  
 }
 
-.container{
-    
+.link:hover {
+  color: rgba(38, 136, 165, 0.8);
+  text-decoration: none;
 }
+
 `
 
 

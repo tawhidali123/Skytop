@@ -13,7 +13,7 @@ export default function Activism(props) {
     return (
         <div>
             <Navigation />
-            <Container fluid>
+            <Container>
                 <Row>
                     <Col lg={9}>
                         <Main />

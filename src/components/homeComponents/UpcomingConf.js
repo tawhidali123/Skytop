@@ -1,4 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchConference} from '../../redux/actions/postActions'
+import { Link } from 'react-router-dom';
+import Moment from 'react-moment'
+
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -8,6 +13,45 @@ import Badge from 'react-bootstrap/Badge'
 import Image1 from '../../images/timingstockr.jpg'
 
 export default function UpcomingConf(props) {
+
+    const state = useSelector(state => state.posts)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchConference())
+    }, [])
+
+
+    let conferencePosts
+
+    if(state.conference){
+        conferencePosts = state.conference.map((item) => {
+            return(
+                <Row style={{marginBottom: '10%'}}>
+                    <Col>
+                    
+                        <div className='conference1'>
+                        <a href={`/conference/3`} style={{textDecoration: 'none', color: 'white'}}>
+                            <h4>{item.Name}</h4>
+                            <p>{item.summary}</p>
+                            <small>
+                                <Moment format='LLLL'>
+                                    {item.Date}
+                                </Moment>
+                            </small>
+                        </a>
+                        </div>
+                    
+                    </Col>
+                </Row>
+            )
+        })
+    }
+
+    // console.log(state)
+
+
+
     return (
         <Wrapper>
             <Container style={{marginTop: '10%'}}>
@@ -17,7 +61,9 @@ export default function UpcomingConf(props) {
                     </Col>
                 </Row>
 
-                <Row style={{marginBottom: '10%'}}>
+                {conferencePosts}
+
+                {/* <Row style={{marginBottom: '10%'}}>
                     <Col>
                     
                         <div className='conference1'>
@@ -53,7 +99,7 @@ export default function UpcomingConf(props) {
                         </a>
                         </div>
                     </Col>
-                </Row>
+                </Row> */}
 
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
