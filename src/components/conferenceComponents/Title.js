@@ -36,7 +36,7 @@ export default function Title(props) {
                 {/* Image/counter section */}
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <div className='conference1' >
+                        <div className='conference1' style={{background: `url(http://localhost:1337${props.backgroundImg})`}}>
                             <div style={{}}>
                                 <div style={{}}>
                                     <Button variant='primary' style={{float: 'right', width: '35%'}}>Register</Button>
@@ -137,7 +137,7 @@ const Wrapper = styled.div`
  font-family: 'Work Sans', sans-serif;
 
 .conference1 {
-    background: url(http://localhost:1337/uploads/financial_sector_banking_techonology_evolution_stability_bbva_1024x683_83583a7445.jpeg);
+    
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100%;

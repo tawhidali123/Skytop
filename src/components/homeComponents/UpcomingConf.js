@@ -30,8 +30,8 @@ export default function UpcomingConf(props) {
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                     
-                        <div className='conference1'>
-                        <a href={`/conference/3`} style={{textDecoration: 'none', color: 'white'}}>
+                        <div className='conference1' style={{background: `url(http://localhost:1337${item.backgroundImage.url})`}}>
+                        <a href={`/conference/${item.id}`} style={{textDecoration: 'none', color: 'white'}}>
                             <h4>{item.Name}</h4>
                             <p>{item.summary}</p>
                             <small>
@@ -120,7 +120,7 @@ const Wrapper = styled.div`
 
     .conference1 {
         padding: 25px;
-        background: url(http://localhost:1337/uploads/financial_sector_banking_techonology_evolution_stability_bbva_1024x683_83583a7445.jpeg);
+        
         background-repeat: no-repeat;
         background-size: auto;
         text-decoration: none;

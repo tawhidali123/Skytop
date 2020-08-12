@@ -19,6 +19,7 @@ export default function Conference(props) {
 
     let [state, setState] = useState([])
     let [imgUrl, setImgUrl] = useState([]) 
+    let [backgroundImg, setBackgroundImg] = useState()
     let { slug } = useParams();
 
     useEffect(() => {
@@ -28,6 +29,7 @@ export default function Conference(props) {
             console.log(res)
             setState(res)
             setImgUrl(res.Sponsors)
+            setBackgroundImg(res.backgroundImage.url)
         })
     }, [])
 
@@ -38,7 +40,7 @@ export default function Conference(props) {
             <Container>
                 <Row>
                     <Col lg={9}>
-                        <Title state={state} imgUrl={imgUrl} />
+                        <Title state={state} imgUrl={imgUrl} backgroundImg={backgroundImg} />
                     </Col>
 
                     <Col lg={3}>
