@@ -6,18 +6,17 @@ import Col from 'react-bootstrap/Col'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
-import CapitalmMain from './capitalComponents/CapitalMain'
+import ResilienceMain from './resilienceComponents/ResilienceMain'
 import SideBar from './homeComponents/SideBar'
 
-
-export default function CapitalMarkets(props) {
+export default function Resilience(props) {
     return (
         <div>
             <Navigation />
             <Container fluid>
                 <Row>
                     <Col lg={9}>
-                        <CapitalmMain />
+                        <ResilienceMain />
                     </Col>
 
                     <Col lg={3}>

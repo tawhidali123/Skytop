@@ -88,7 +88,7 @@ export const fetchMain = () => {
         .then(res => res.json())
         .then(resp => {
             console.log(resp)
-            dispatch(populateMain(resp[0].articles))
+            dispatch(populateMain(resp))
         })
     }
 }
@@ -108,6 +108,109 @@ export const fetchConference = () => {
         .then(resp => {
             // console.log(resp)
             dispatch(populateConference(resp[0].conferences))
+        })
+    }
+}
+
+
+
+// //////////////////// ACTIVISM FETCH CALL
+export const populateActivism = post => ({
+    type: 'POPULATE_ACTIVISM',
+    post
+})
+
+export const fetchActivism = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/activism-pages`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateActivism(resp[0].articles))
+        })
+    }
+}
+
+
+
+
+// //////////////////// CSR FETCH CALL
+export const populateCsr = post => ({
+    type: 'POPULATE_CSR',
+    post
+})
+
+export const fetchCsr = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/csr-pages`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateCsr(resp[0].articles))
+        })
+    }
+}
+
+
+
+
+
+// ///////////////////// INVESTMENT FETCH CALL
+export const populateInvestment = post => ({
+    type: 'POPULATE_INVESTMENT',
+    post
+})
+
+export const fetchInvestment = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/investment-pages`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateInvestment(resp[0].articles))
+        })
+    }
+}
+
+
+
+
+
+
+// ////////////////////// CAPITAL FETCH CALL
+export const populateCapital = post => ({
+    type: 'POPULATE_CAPITAL',
+    post
+})
+
+export const fetchCapital = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/capital-pages`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateCapital(resp[0].articles))
+        })
+    }
+}
+
+
+
+
+
+// /////////////////// RESILIENCE FETCH CALL
+export const populateResilience = post => ({
+    type: 'POPULATE_RESILIENCE',
+    post
+})
+
+export const fetchResilience = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/resilience-pages`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateResilience(resp[0].articles))
         })
     }
 }

@@ -21,12 +21,12 @@ export default function MainArticle(props) {
 
     let highlightPosts
     let mainPosts
+    let videoPosts
 
-    console.log(state)
+    
     // HIGHLIGHT SECTION: 2 Articles
     if(state.highLight){
         highlightPosts = state.highLight.map((item) => {
-            console.log(item)
             return( 
                 
                 <Col lg={6}>
@@ -34,7 +34,7 @@ export default function MainArticle(props) {
                         <div>
                             <div style={{width: '100%', height: '100%'}}>
                                 <img 
-                                    src='https://travel.state.gov/content/travel/en/us-visas/business/_jcr_content/tsg-rwd-content-page-parsysxxx/slideshow.img.png/1512148994695.png' 
+                                    src={`http://localhost:1337${item.media[0].url}`} 
                                     height={'100%'}
                                     width={'100%'}                        
                                 />
@@ -56,16 +56,16 @@ export default function MainArticle(props) {
     }
 
 
-    // MAIN SECTION: 3 Articles
+    // MAIN SECTION: 4 Articles
     if(state.main){
-        mainPosts = state.main.map((item) => {
+        mainPosts = state.main[0].articles.map((item) => {
             return(
                 <Row style={{marginBottom: '40px', marginTop: '40px'}}>
                     <Col lg={4}>
                         <Link to={`/article/${item.id}`} style={{textDecoration: 'none'}}>
                             <div style={{}}>
                                 <img 
-                                    src='https://cdn.pdc.business.comcast.com/~/media/business_comcast_com/images/Re-Arch/Business%20Internet/Hero%20Image%20BI%20Mobile.jpg?rev=03310821-ee0a-44aa-9afb-ebdeed329128&h=400&w=640&la=en&hash=998F6E998D66BE1CC407E24432CA509C299546A8' 
+                                    src={`http://localhost:1337${item.media[0].url}`} 
                                     height={'100%'}
                                     width={'100%'}
                                 />
@@ -90,6 +90,30 @@ export default function MainArticle(props) {
     }
 
 
+    // VIDEO MAIN SECTION
+    if(state.main){
+        videoPosts = state.main[0].videos.map(item => {
+            return(
+                <Row style={{marginBottom: '5%'}}>
+                    <Col>
+                        <div style={{marginLeft: '11%'}}>
+                            <div>
+                                <iframe width="75%" height="415" src={`${item.link}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>
+                                <h2>{item.Title}</h2>
+                                <p>{item.Description}</p>
+                                <small>Dec 16, 2019</small>
+                                <small style={{float: 'right'}}><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            )
+        })
+    }
+
+
 
     return (
         <Wrapper>
@@ -101,6 +125,7 @@ export default function MainArticle(props) {
                 <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}} />
 
                 {mainPosts}
+                {videoPosts}
 
             </Container>
         </Wrapper>

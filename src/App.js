@@ -6,7 +6,7 @@ import Activism from './components/Activism'
 import Csr from './components/Csr'
 import InvestManagement from './components/InvestManagement'
 import CapitalMarkets from './components/CapitalMarkets'
-import CyberSecurity from './components/CyberSecurity'
+import Resilience from './components/Resilience'
 
 import Article from './components/Article'
 import Conference from './components/Conference'
@@ -22,7 +22,7 @@ function App() {
         <Route exact path='/csrSustainability' render={(routerProps) => <Csr routerProps={routerProps} />} />
         <Route exact path='/investmentManagement' render={(routerProps) => <InvestManagement routerProps={routerProps} />} />
         <Route exact path='/capitalMarkets' render={(routerProps) => <CapitalMarkets routerProps={routerProps} />} />
-        <Route exact path='/resilienceInnovationCyber' render={(routerProps) => <CyberSecurity routerProps={routerProps} />} />
+        <Route exact path='/resilienceInnovationCyber' render={(routerProps) => <Resilience routerProps={routerProps} />} />
 
         
         <Route exact path="/article/:slug">

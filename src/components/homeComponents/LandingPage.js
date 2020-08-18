@@ -21,15 +21,7 @@ export default function LandingPage(props) {
         dispatch(fetchFeatures())
     }, [])
 
-    // useEffect(() => {
-    //     console.log('item change')
-    //     const holder = state.items.reduce((acc, curr) => {
-    //         let spaceConvert = curr.name.split(' ').join('').toLowerCase()
-    //         acc[spaceConvert] = curr
-    //         return acc
-    //     }, {})
-    //     console.log('holder= ', holder)
-    // }, [state.items])
+    
 
     let articles
     let conferences
@@ -41,7 +33,7 @@ export default function LandingPage(props) {
                     <div>
                         <img
                         className="d-block w-100"
-                        src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
+                        src={`http://localhost:1337${article.media[0].url}`}
                         alt="First slide"
                     />
                     </div>

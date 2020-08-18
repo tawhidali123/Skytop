@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
+
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
-import Main from './sectionComponents/Main'
+import ActivismMain from './activismComponents/ActivismMain'
 import SideBar from './homeComponents/SideBar'
 
 export default function Activism(props) {
@@ -16,7 +17,7 @@ export default function Activism(props) {
             <Container fluid>
                 <Row>
                     <Col lg={9}>
-                        <Main />
+                        <ActivismMain />
                     </Col>
 
                     <Col lg={3}>

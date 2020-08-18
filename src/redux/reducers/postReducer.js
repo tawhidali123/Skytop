@@ -4,6 +4,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
+        // HOMEPAGE
         case 'POPULATE_FEATURES':
             return {
                 ...state,
@@ -38,6 +39,41 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 conference: [...action.post] 
+            } 
+        
+        // ACTIVISM
+        case 'POPULATE_ACTIVISM':
+            return {
+                ...state,
+                activism: [...action.post] 
+            } 
+
+        // CSR
+        case 'POPULATE_CSR':
+            return {
+                ...state,
+                csr: [...action.post] 
+            } 
+
+        // INVESTMENT
+        case 'POPULATE_INVESTMENT':
+            return {
+                ...state,
+                investment: [...action.post] 
+            } 
+
+        // CAPITAL
+        case 'POPULATE_CAPITAL':
+            return {
+                ...state,
+                capital: [...action.post] 
+            } 
+
+        // RESILIENCE
+        case 'POPULATE_RESILIENCE':
+            return {
+                ...state,
+                resilience: [...action.post] 
             } 
         default:
             return state;
