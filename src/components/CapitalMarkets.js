@@ -16,7 +16,7 @@ export default function CapitalMarkets(props) {
             <Navigation />
             <Container fluid>
                 <Row>
-                    <Col lg={9}>
+                    <Col lg={9} style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}}>
                         <CapitalmMain />
                     </Col>
 

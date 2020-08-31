@@ -75,6 +75,13 @@ export default function(state = initialState, action) {
                 ...state,
                 resilience: [...action.post] 
             } 
+        
+        // ALL CONFERENCES
+        case 'POPULATE_ALLCONFERENCE':
+            return {
+                ...state,
+                allConferences: [...action.post] 
+            } 
         default:
             return state;
     }

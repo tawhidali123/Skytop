@@ -37,7 +37,7 @@ export default function Conference(props) {
         <Wrapper>
             <Navigation />
 
-            <Container>
+            <Container fluid>
                 <Row>
                     <Col lg={9}>
                         <Title state={state} imgUrl={imgUrl} backgroundImg={backgroundImg} />

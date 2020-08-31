@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {GrCart} from 'react-icons/gr';
@@ -12,6 +12,24 @@ import Col from 'react-bootstrap/Col'
 import styled from 'styled-components'
 
 export default function Navigation(props) {
+
+    // let [activeState, setActiveState] = useState()
+
+
+    // const handleClick = (evt) => {
+    //     console.log('click =>', evt.target.className)
+        
+    //     setActiveState(evt.target)
+    //     if(activeState !== evt.target) {
+    //         evt.target.className = 'active'
+    //     }
+        
+    // }
+
+    
+    // console.log(activeState)
+
+
     return (
         <Wrapper>
             <Container fluid style={{margin: '0'}} className='container'>
@@ -45,11 +63,11 @@ export default function Navigation(props) {
                 <Row >
                     <Col xs={12}>
                         <ul>
-                            <li><p><Link className='link' to='/activism'>ACTIVISM</Link></p></li>
-                            <li><p><Link className='link' to='/csrSustainability'>CSR & SUSTAINABILITY</Link></p></li>
-                            <li><p><Link className='link' to='/investmentManagement'>INVESTMENT MANAGEMENT</Link></p></li>
-                            <li><p><Link className='link' to='/capitalMarkets'>CAPITAL MARKETS</Link></p></li>
-                            <li><p><Link className='link' to='/resilienceInnovationCyber'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></p></li>
+                            <li><p><Link key={0} className='link' to='/activism'>ACTIVISM</Link></p></li>
+                            <li><p><Link key={1} className='link' to='/csrSustainability'>CSR & SUSTAINABILITY</Link></p></li>
+                            <li><p><Link key={2} className='link' to='/investmentManagement'>INVESTMENT MANAGEMENT</Link></p></li>
+                            <li><p><Link key={3} className='link' to='/capitalMarkets'>CAPITAL MARKETS</Link></p></li>
+                            <li><p><Link key={4} className='link' to='/resilienceInnovationCyber'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></p></li>
                         </ul>
                     </Col>
                 </Row>
@@ -100,6 +118,12 @@ li p {
 .link:hover {
   color: rgba(38, 136, 165, 0.8);
   text-decoration: none;
+}
+
+.active {
+    color: rgba(38, 136, 165, 0.8);
+    pointer-events: none;
+    cursor: default;
 }
 
 `

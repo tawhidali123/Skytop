@@ -58,7 +58,7 @@ export default function LandingPage(props) {
                     <div>
                         <img
                         className="d-block w-100"
-                        src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
+                        src={`http://localhost:1337${conference.backgroundImage.url}`}
                         alt="First slide"
                     />
                     </div>

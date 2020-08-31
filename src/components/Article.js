@@ -38,7 +38,7 @@ export default function Article(props) {
     return (
         <Wrapper>
             <Navigation />
-            <Container style={{marginTop: '5%'}}>
+            <Container fluid style={{margin: '3% 0'}}>
                 <Row >
                     <Col lg={9} style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}}>
                         <div>

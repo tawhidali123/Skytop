@@ -8,6 +8,7 @@ import Badge from 'react-bootstrap/Badge'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Moment from 'react-moment'
 
 export default function MainArticle(props) {
 
@@ -43,7 +44,11 @@ export default function MainArticle(props) {
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>RESILIENCE, INNOVATION + CYBER SECURITY</Badge></small>
                                 <h2>{item.title}</h2>
                                 <p>{item.description}</p>
-                                <small>{item.created_at}</small>
+                                <small className='date' style={{color: 'rgba(166,166,166,1)'}}>
+                                    <Moment format='LLLL'>
+                                        {item.created_at}
+                                    </Moment>
+                                </small>
                                 <br />
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
@@ -103,7 +108,11 @@ export default function MainArticle(props) {
                             <div>
                                 <h2>{item.Title}</h2>
                                 <p>{item.Description}</p>
-                                <small>Dec 16, 2019</small>
+                                <small className='date'>
+                                    <Moment format='LLLL'>
+                                        {item.created_at}
+                                    </Moment>
+                                </small>
                                 <small style={{float: 'right'}}><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
                         </div>

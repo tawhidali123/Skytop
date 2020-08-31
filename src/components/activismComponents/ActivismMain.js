@@ -29,11 +29,14 @@ export default function Main(props) {
 
     let activismHighlight
     let activismMainArticle
+    let activismVideos
+
+    console.log(state)
 
 
     if(state.activism) {
         // HIGHLIGHT ARTICLE
-        activismHighlight = state.activism.slice(0, 1).map(item => {
+        activismHighlight = state.activism[0].articles.slice(0, 1).map(item => {
             return(
                 <Col lg={11}>
                     <Link to={`/article/${item.id}`} style={{textDecoration: 'none'}}>
@@ -53,7 +56,7 @@ export default function Main(props) {
         })
 
         // MAIN ARTICLE
-        activismMainArticle = state.activism.slice(1, 3).map(item => {
+        activismMainArticle = state.activism[0].articles.slice(1, 3).map(item => {
             return(
                 <Row style={{marginBottom: '5%'}}>
                     <Col sm={3}>
@@ -71,6 +74,28 @@ export default function Main(props) {
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
                         </Link>
+                    </Col>
+                </Row>
+            )
+        })
+
+
+        // VIDEO CONTENTS
+        activismVideos = state.activism[0].videos.map(item => {
+            return(
+                <Row style={{marginBottom: '5%'}}>
+                    <Col>
+                        <div style={{marginLeft: '11%'}}>
+                            <div>
+                                <iframe width="75%" height="415" src={`${item.link}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>
+                                <h2>{item.Title}</h2>
+                                <p>{item.Description}</p>
+                                <small>{item.updated_at}</small>
+                                <small style={{float: 'right'}}><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
+                            </div>
+                        </div>
                     </Col>
                 </Row>
             )
@@ -130,21 +155,8 @@ export default function Main(props) {
 
 
                 {/* VIDEO SECTION */}
-                <Row style={{marginBottom: '5%'}}>
-                    <Col>
-                        <div style={{marginLeft: '11%'}}>
-                            <div>
-                                <iframe width="75%" height="415" src="https://www.youtube.com/embed/GdHUlaVxDwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div>
-                                <h2>Activism: An Interview with Walied Soliman</h2>
-                                <p>Interview with Walied Soliman, Global Chair and Canadian Chair at Norton Rose Fulbright LLP, discussing M&A and the burgeoning cannabis industry. From the 2019 Shareholder Activism Summit in New York City.</p>
-                                <small>Dec 16, 2019</small>
-                                <small style={{float: 'right'}}><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
+                
+                {activismVideos}
 
                 <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px', marginTop: '2em'}} />
 

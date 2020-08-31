@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchFeatures} from '../../redux/actions/postActions'
 
+import Moment from 'react-moment'
 import Badge from 'react-bootstrap/Badge'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
@@ -31,7 +32,11 @@ export default function FeatureArticle(props) {
                             {/* <p className='description'>{item.articles[0].description}</p> */}
                             <small className='author'>by {item.author}</small>
                             <br />
-                            <small className='date'>{item.created_at}</small>
+                            <small className='date'>
+                                <Moment format='LLLL'>
+                                    {item.created_at}
+                                </Moment>
+                            </small>
                             <br />
                             <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                         </div>
@@ -51,10 +56,10 @@ export default function FeatureArticle(props) {
                     <Col>
                         <h4 style={{fontWeight: 'bold'}}>Features</h4> 
                     </Col>
-                </Row>   
-                {
-                    features
-                } 
+                </Row>  
+
+                {features} 
+                
             </Container>  
         </Wrapper>
     )

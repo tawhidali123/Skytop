@@ -126,7 +126,7 @@ export const fetchActivism = () => {
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
-            dispatch(populateActivism(resp[0].articles))
+            dispatch(populateActivism(resp))
         })
     }
 }
@@ -211,6 +211,27 @@ export const fetchResilience = () => {
         .then(resp => {
             // console.log(resp)
             dispatch(populateResilience(resp[0].articles))
+        })
+    }
+}
+
+
+
+
+
+// ///////////////// ALL CONFERENCES FETCH CALL
+export const populateAllconference = post => ({
+    type: 'POPULATE_ALLCONFERENCE',
+    post
+})
+
+export const fetchAllConference = () => {
+    return function(dispatch){
+        fetch(`http://localhost:1337/conferences`)
+        .then(res => res.json())
+        .then(resp => {
+            // console.log(resp)
+            dispatch(populateAllconference(resp))
         })
     }
 }

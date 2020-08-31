@@ -48,7 +48,6 @@ export default function UpcomingConf(props) {
         })
     }
 
-    // console.log(state)
 
 
 
@@ -63,47 +62,11 @@ export default function UpcomingConf(props) {
 
                 {conferencePosts}
 
-                {/* <Row style={{marginBottom: '10%'}}>
-                    <Col>
-                    
-                        <div className='conference1'>
-                        <a href={`/conference/3`} style={{textDecoration: 'none', color: 'white'}}>
-                            <h4>Shareholder Engagement & Communication London</h4>
-                            <p>Constructive Strategies for Issuers</p>
-                            <small>October 7, 2020 IN LONDON, UNITED KINGDOM</small>
-                        </a>
-                        </div>
-                    
-                    </Col>
-                </Row>
-
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <div className='conference2'>
-                        <a href={`/conference/2`} style={{textDecoration: 'none', color: 'white'}}>
-                            <h4>Impact Investing</h4>
-                            <p>Driving Social Purpose Through Measurable Investment Returns</p>
-                            <small>September 17, 2020 IN BOSTON, MA</small>
+                        <a href='/allConferences'>
+                            <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>VIEW ALL</Badge></small>
                         </a>
-                        </div>
-                    </Col>
-                </Row>
-
-                <Row style={{marginBottom: '10%'}}>
-                    <Col>
-                        <div className='conference3'>
-                        <a href={`/conference/1`} style={{textDecoration: 'none', color: 'white'}}>
-                            <h4>Water & Long-Term Value Summit</h4>
-                            <p>Framework for Creating a Diverse and Dynamic Marketplace</p>
-                            <small>September 1, 2020 IN Indian Springs Calistoga 1712 Lincoln Ave Calistoga, CA</small>
-                        </a>
-                        </div>
-                    </Col>
-                </Row> */}
-
-                <Row style={{marginBottom: '10%'}}>
-                    <Col>
-                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>VIEW ALL</Badge></small>
                     </Col>
                 </Row>
         
