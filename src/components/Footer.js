@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../images/skytop-logo-KO-FINAL.png'
-import {AiOutlineTwitter} from 'react-icons/ai'
-import {AiFillLinkedin} from 'react-icons/ai'
+import {TiSocialTwitterCircular} from 'react-icons/ti'
+import {TiSocialLinkedinCircular} from 'react-icons/ti'
 import Image from 'react-bootstrap/Image'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
@@ -68,8 +68,8 @@ export default function Footer(props) {
                     </Col>
                     <Col lg={2}>
                         <div style={{float: 'right'}}>
-                            <AiOutlineTwitter style={{margin: '10px'}} />
-                            <AiFillLinkedin />
+                            <a href='https://twitter.com/skytopstrat?lang=en'><h1><TiSocialTwitterCircular /></h1></a>
+                            <a href='https://www.linkedin.com/company/skytopstrategies/'><h1><TiSocialLinkedinCircular /></h1></a>
                         </div>
                     </Col>
                 </Row>
@@ -78,20 +78,24 @@ export default function Footer(props) {
                     <Col>
                         <div style={{marginTop: '5%'}}>
                             <ul>
-                                <li>NEW YORK</li>
-                                <li>CHICAGO</li>
-                                <li>SAN FRANCISCO</li>
-                                <li> WASHINGTON DC</li>
-                                <li>BOSTON</li>
-                                <li>TORONTO</li>
-                                <li>TOKYO</li>
-                                <li>HONG KONG</li>
-                                <li>TEL AVIV</li>
-                                <li>ROME</li>
-                                <li>FRAKFURT</li>
-                                <li>STOCKHOLM</li>
-                                <li>LONDON</li>
-                                <li>MUMBAI</li>
+                                <div>
+                                    <li>NEW YORK</li>
+                                    <li>CHICAGO</li>
+                                    <li>SAN FRANCISCO</li>
+                                    <li> WASHINGTON DC</li>
+                                    <li>BOSTON</li>
+                                    <li>TORONTO</li>
+                                    <li>TOKYO</li>
+                                </div>
+                                <div style={{margin: '1% 4%'}}>
+                                    <li>HONG KONG</li>
+                                    <li>TEL AVIV</li>
+                                    <li>ROME</li>
+                                    <li>FRAKFURT</li>
+                                    <li>STOCKHOLM</li>
+                                    <li>LONDON</li>
+                                    <li>MUMBAI</li>
+                                </div>
                             </ul>
                         </div>
                     </Col>
@@ -112,11 +116,21 @@ const Wrapper = styled.div`
         list-style-type: none;
     }
 
+    ul {
+        justify-content: center;
+    }
+
     li {
-        display: inline;
-        margin: 15px;
+        display: inline-block;
+        padding: 0 15px;
         font-weight: bold;
         color: rgba(98, 104, 147, 1);
+        border-right: rgba(98, 104, 147, 1) solid 1px; 
+        
+    }
+
+    h1 {
+        display: inline-block;
     }
 
     

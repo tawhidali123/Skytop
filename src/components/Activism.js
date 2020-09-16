@@ -11,6 +11,10 @@ import SideBar from './homeComponents/SideBar'
 
 export default function Activism(props) {
 
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
     return (
         <div>
             <Navigation />

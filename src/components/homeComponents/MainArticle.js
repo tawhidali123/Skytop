@@ -83,7 +83,7 @@ export default function MainArticle(props) {
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
                                 <h2>{item.title}</h2>
                                 <p>{item.description}</p>
-                                <small>by {item.author}</small>
+                                <small style={{color: 'rgba(108,107,107)'}}>by {item.author}</small>
                                 <br />
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>

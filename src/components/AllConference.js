@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment'
 
 
 export default function AllConference(props) {
@@ -44,10 +45,15 @@ export default function AllConference(props) {
                     <Col lg={8} >
                         <Link to={`/conference/${conference.id}`} style={{textDecoration: 'none'}}>
                             <div>
-                                <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>Category</Badge></small>
+                                <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>{conference.category.name}</Badge></small>
                                 <h2>{conference.Name}</h2>
                                 <p>{conference.Description}</p>
-                                <small>{conference.Date}</small>
+                                <small style={{color: 'rgba(108,107,107)', fontWeight: 'bold'}}>
+                                    <Moment format='LLLL'>
+                                        {conference.Date}
+                                    </Moment>
+                                    
+                                </small>
                                 <br />
                             </div>
                         </Link>
@@ -64,7 +70,7 @@ export default function AllConference(props) {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Conferences</h1>
+                        <h1 style={{fontWeight: 'bold'}}>Conferences</h1>
                     </Col>
                 </Row>
 
@@ -77,5 +83,13 @@ export default function AllConference(props) {
 }
 
 const Wrapper = styled.div`
+ h2 {
+    color: rgba(0,0,0,1);
+    font-weight: bold;
+ }
+
+ p {
+    color: rgba(108,107,107);
+ }
 
 `

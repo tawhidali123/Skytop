@@ -10,24 +10,11 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styled from 'styled-components'
+import Modal from 'react-bootstrap/Modal'
 
 export default function Navigation(props) {
 
-    // let [activeState, setActiveState] = useState()
-
-
-    // const handleClick = (evt) => {
-    //     console.log('click =>', evt.target.className)
-        
-    //     setActiveState(evt.target)
-    //     if(activeState !== evt.target) {
-    //         evt.target.className = 'active'
-    //     }
-        
-    // }
-
-    
-    // console.log(activeState)
+    const [lgShow, setLgShow] = useState(false);
 
 
     return (
@@ -50,12 +37,8 @@ export default function Navigation(props) {
 
                     <Col xs={2} lg={2} style={{marginTop: '2%'}}>
                         <div style={{float: 'right'}}>
-                            <div style={{float: 'left'}}>
-                                <GrCart style={{}}/>
-                            </div>
-                            <div style={{float: 'right'}}>
-                                <BsSearch style={{marginLeft: '100%'}} />
-                            </div>
+                            <h4 style={{display: 'inline-block',marginRight: '15px'}}> <GrCart style={{cursor: 'pointer'}} onClick={() => setLgShow(true)} /> </h4>
+                            <h4 style={{display: 'inline-block'}}> <BsSearch /> </h4>
                         </div>
                     </Col>
                 </Row>
@@ -74,6 +57,26 @@ export default function Navigation(props) {
             </Container>
 
             <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}} />
+
+
+            {/* CHECKOUT MODAL */}
+            <Modal
+                size="lg"
+                show={lgShow}
+                onHide={() => setLgShow(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+                style={{fontFamily: 'Work Sans', cursor: 'pointer'}}
+            >
+                <Modal.Header closeButton style={{backgroundColor: 'rgba(248,181,22,1)'}}>
+                    <Modal.Title id="example-modal-sizes-title-lg">
+                        <GrCart />  Shopping Cart
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h4>There are no Conferences in your cart currently</h4>
+                </Modal.Body>
+            </Modal>
+
         </Wrapper>
     )
 }

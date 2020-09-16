@@ -31,11 +31,13 @@ export default function LandingPage(props) {
             return(
                 <Carousel.Item>
                     <div>
-                        <img
-                        className="d-block w-100"
-                        src={`http://localhost:1337${article.media[0].url}`}
-                        alt="First slide"
-                    />
+                        <a href={`/article/${article.id}`}>
+                            <img
+                                className="d-block w-100"
+                                src={`http://localhost:1337${article.media[0].url}`}
+                                alt="article slide"
+                            />
+                        </a>
                     </div>
             
                     <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
@@ -56,11 +58,13 @@ export default function LandingPage(props) {
             return(
                 <Carousel.Item>
                     <div>
-                        <img
-                        className="d-block w-100"
-                        src={`http://localhost:1337${conference.backgroundImage.url}`}
-                        alt="First slide"
-                    />
+                        <a href={`/conference/${conference.id}`}>
+                            <img
+                                className="d-block w-100"
+                                src={`http://localhost:1337${conference.backgroundImage.url}`}
+                                alt="conference slide"
+                            />
+                        </a>
                     </div>
             
                     <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>

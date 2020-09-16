@@ -14,6 +14,7 @@ import styled from 'styled-components'
 import Image from 'react-bootstrap/Image'
 import Badge from 'react-bootstrap/Badge'
 import {BsChevronDown} from 'react-icons/bs'
+import Moment from 'react-moment'
 
 
 
@@ -47,7 +48,7 @@ export default function Main(props) {
                             <div>
                                 <h2>{item.title}</h2>
                                 <p>{item.description}</p>
-                                <small>{item.updated_at}</small>
+                                <small><Moment format='LLLL'>{item.updated_at}</Moment></small>
                             </div>
                         </div>
                     </Link>
@@ -69,7 +70,7 @@ export default function Main(props) {
                             <div>
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
-                                <small>{item.updated_at}</small>
+                                <small><Moment format='LLLL'>{item.updated_at}</Moment></small>
                                 <br />
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
@@ -92,7 +93,7 @@ export default function Main(props) {
                             <div>
                                 <h2>{item.Title}</h2>
                                 <p>{item.Description}</p>
-                                <small>{item.updated_at}</small>
+                                <small><Moment format='LLLL'>{item.updated_at}</Moment></small>
                                 <small style={{float: 'right'}}><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
                         </div>
@@ -184,7 +185,7 @@ export default function Main(props) {
 
                 <Row>
                     <Col style={{marginLeft: '50%'}}>
-                        <a href='#'>View All Articles  <BsChevronDown /></a>
+                        <a href='/viewAll/1'>View All Articles  <BsChevronDown /></a>
                     </Col>
                 </Row>
 

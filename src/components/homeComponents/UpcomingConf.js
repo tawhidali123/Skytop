@@ -56,7 +56,9 @@ export default function UpcomingConf(props) {
             <Container style={{marginTop: '10%'}}>
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <h4 style={{fontWeight: 'bold'}}>Conferences</h4>
+                        <a href='/allConferences'>
+                            <h4 style={{fontWeight: 'bold', color: 'black'}}>Conferences</h4>
+                        </a>
                     </Col>
                 </Row>
 

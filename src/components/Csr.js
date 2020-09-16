@@ -10,6 +10,11 @@ import CsrMain from './csrComponents/CsrMain'
 import SideBar from './homeComponents/SideBar'
 
 export default function Csr(props) {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
     return (
         <div>
             <Navigation />

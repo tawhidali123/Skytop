@@ -10,6 +10,11 @@ import ResilienceMain from './resilienceComponents/ResilienceMain'
 import SideBar from './homeComponents/SideBar'
 
 export default function Resilience(props) {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
     return (
         <div>
             <Navigation />

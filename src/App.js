@@ -16,6 +16,7 @@ import Resilience from './components/Resilience'
 
 import Article from './components/Article'
 import Conference from './components/Conference'
+import ViewAllArticle from './components/ViewAllArticle'
 
 import AllConference from './components/AllConference'
 import AboutUs from './components/AboutUs'
@@ -36,6 +37,8 @@ function App() {
 
   return (
     <div>
+
+    {/* MARKETING MODAL */}
     <ModalWrapper>
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton  style={{backgroundColor: 'rgba(18, 24, 74, 1)', padding: '6%', color: 'white'}}>
@@ -104,6 +107,10 @@ function App() {
 
         <Route exact path='/allConferences'>
           <AllConference />
+        </Route>
+
+        <Route exact path='/viewAll/:slug'>
+          <ViewAllArticle />
         </Route>
 
         <Route exact path='/aboutUs'>

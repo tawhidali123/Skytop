@@ -10,7 +10,7 @@ import Email from '../homeComponents/Email'
 export default function ArticleSideBar(props) {
     return (
         <Wrapper>
-            <Container style={{padding: '0', margin: '10% 0'}}>
+            <Container style={{}}>
                 {/* CONFERENCES */}
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
