@@ -42,6 +42,7 @@ export default function MainArticle(props) {
                             </div>
                             <div>
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>RESILIENCE, INNOVATION + CYBER SECURITY</Badge></small>
+
                                 <h2>{item.title}</h2>
                                 <p>{item.description}</p>
                                 <small className='date' style={{color: 'rgba(166,166,166,1)'}}>
@@ -49,6 +50,7 @@ export default function MainArticle(props) {
                                         {item.created_at}
                                     </Moment>
                                 </small>
+
                                 <br />
                                 <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(166,166,166,1)'}}>COMMENTS</Badge></small>
                             </div>
