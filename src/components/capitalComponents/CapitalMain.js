@@ -39,7 +39,7 @@ export default function CapitalMain(props) {
                     <Link to={`/article/${item.id}`} style={{textDecoration: 'none'}}>
                         <div style={{marginLeft: '15%'}}>
                             <div style={{marginBottom: '12px'}}>
-                                <Image fluid src={`http://localhost:1337${item.media[0].url}`} style={{}}/>
+                                <Image fluid src={`http://159.65.230.30${item.media[0].url}`} style={{}}/>
                             </div>
                             <div>
                                 <h2>{item.title}</h2>
@@ -58,7 +58,7 @@ export default function CapitalMain(props) {
                 <Row style={{marginBottom: '5%'}}>
                     <Col sm={3}>
                         <div className='imgHolder'>
-                            <img src={`http://localhost:1337${item.media[0].url}`} />
+                            <img src={`http://159.65.230.30${item.media[0].url}`} />
                         </div>
                     </Col>
                     <Col sm={9}>

@@ -35,7 +35,7 @@ export default function MainArticle(props) {
                         <div>
                             <div style={{width: '100%', height: '100%'}}>
                                 <img 
-                                    src={`http://localhost:1337${item.media[0].url}`} 
+                                    src={`http://159.65.230.30${item.media[0].url}`} 
                                     height={'100%'}
                                     width={'100%'}                        
                                 />
@@ -70,7 +70,7 @@ export default function MainArticle(props) {
                         <Link to={`/article/${item.id}`} style={{textDecoration: 'none'}}>
                             <div style={{}}>
                                 <img 
-                                    src={`http://localhost:1337${item.media[0].url}`} 
+                                    src={`http://159.65.230.30${item.media[0].url}`} 
                                     height={'100%'}
                                     width={'100%'}
                                 />

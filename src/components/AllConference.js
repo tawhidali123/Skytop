@@ -35,7 +35,7 @@ export default function AllConference(props) {
                         <Link to={`/conference/${conference.id}`} style={{textDecoration: 'none'}}>
                             <div style={{}}>
                                 <img 
-                                    src={`http://localhost:1337${conference.backgroundImage.url}`} 
+                                    src={`http://159.65.230.30${conference.backgroundImage.url}`} 
                                     height={'100%'}
                                     width={'100%'}
                                 />
