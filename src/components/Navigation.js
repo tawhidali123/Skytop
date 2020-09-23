@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {GrCart} from 'react-icons/gr';
@@ -10,8 +10,13 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styled from 'styled-components'
+import Modal from 'react-bootstrap/Modal'
 
 export default function Navigation(props) {
+
+    const [lgShow, setLgShow] = useState(false);
+
+
     return (
         <Wrapper>
             <Container fluid style={{margin: '0'}} className='container'>
@@ -32,12 +37,8 @@ export default function Navigation(props) {
 
                     <Col xs={2} lg={2} style={{marginTop: '2%'}}>
                         <div style={{float: 'right'}}>
-                            <div style={{float: 'left'}}>
-                                <GrCart style={{}}/>
-                            </div>
-                            <div style={{float: 'right'}}>
-                                <BsSearch style={{marginLeft: '100%'}} />
-                            </div>
+                            <h4 style={{display: 'inline-block',marginRight: '15px'}}> <GrCart style={{cursor: 'pointer'}} onClick={() => setLgShow(true)} /> </h4>
+                            <h4 style={{display: 'inline-block'}}> <BsSearch /> </h4>
                         </div>
                     </Col>
                 </Row>
@@ -45,17 +46,37 @@ export default function Navigation(props) {
                 <Row >
                     <Col xs={12}>
                         <ul>
-                            <li><a class="active"><Link to='/activism'>ACTIVISM</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>CSR & SUSTAINABILITY</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>INVESTMENT MANAGEMENT</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>CAPITAL MARKETS</Link></a></li>
-                            <li><a href="#"><Link to='/activism'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></a></li>
+                            <li><p><Link key={0} className='link' to='/activism'>ACTIVISM</Link></p></li>
+                            <li><p><Link key={1} className='link' to='/csrSustainability'>CSR & SUSTAINABILITY</Link></p></li>
+                            <li><p><Link key={2} className='link' to='/investmentManagement'>INVESTMENT MANAGEMENT</Link></p></li>
+                            <li><p><Link key={3} className='link' to='/capitalMarkets'>CAPITAL MARKETS</Link></p></li>
+                            <li><p><Link key={4} className='link' to='/resilienceInnovationCyber'>RESILIENCE, INNOVATION + CYBER SECURITY</Link></p></li>
                         </ul>
                     </Col>
                 </Row>
             </Container>
 
             <hr style={{borderTop: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}} />
+
+
+            {/* CHECKOUT MODAL */}
+            <Modal
+                size="lg"
+                show={lgShow}
+                onHide={() => setLgShow(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+                style={{fontFamily: 'Work Sans', cursor: 'pointer'}}
+            >
+                <Modal.Header closeButton style={{backgroundColor: 'rgba(248,181,22,1)'}}>
+                    <Modal.Title id="example-modal-sizes-title-lg">
+                        <GrCart />  Shopping Cart
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h4>There are no Conferences in your cart currently</h4>
+                </Modal.Body>
+            </Modal>
+
         </Wrapper>
     )
 }
@@ -82,7 +103,7 @@ li {
   float: left;
 }
 
-li a {
+li p {
   display: block;
   color: gray;
   text-align: center;
@@ -92,13 +113,22 @@ li a {
   color: rgba(0,0,0,1);
 }
 
-li a:hover {
-  color: rgba(0, 138, 153, 0.6);
+
+.link{
+  color: rgba(0,0,0,.7);  
 }
 
-.container{
-    
+.link:hover {
+  color: rgba(38, 136, 165, 0.8);
+  text-decoration: none;
 }
+
+.active {
+    color: rgba(38, 136, 165, 0.8);
+    pointer-events: none;
+    cursor: default;
+}
+
 `
 
 

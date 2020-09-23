@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {fetchPosts, singlePost} from '../../redux/actions/postActions'
+import {fetchCarousal, fetchFeatures} from '../../redux/actions/postActions'
 
 import styled from 'styled-components';
 import Carousel from 'react-bootstrap/Carousel';
-import HighlightArticle from './HighlightArticle'
+import FeatureArticle from './FeatureArticle'
 import SideBar from './SideBar'
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row'
@@ -14,23 +14,75 @@ import Badge from 'react-bootstrap/Badge'
 export default function LandingPage(props) {
 
     const state = useSelector(state => state.posts)
-    const [mutatedState, setMutatedState] = useState()
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchPosts())
-        dispatch(singlePost(5))
+        dispatch(fetchCarousal())
+        dispatch(fetchFeatures())
     }, [])
 
-    useEffect(() => {
-        console.log('item change')
-        const holder = state.items.reduce((acc, curr) => {
-            let spaceConvert = curr.name.split(' ').join('').toLowerCase()
-            acc[spaceConvert] = curr
-            return acc
-        }, {})
-        console.log('holder= ', holder)
-    }, [state.items])
+    
+
+    let articles
+    let conferences
+   
+    if(state.carousal){
+        articles  = state.carousal[0].articles.map(article => {
+            return(
+                <Carousel.Item>
+                    <div>
+                        <a href={`/article/${article.id}`}>
+                            <img
+                                className="d-block w-100"
+                                src={`http://159.65.230.30${article.media[0].url}`}
+                                alt="article slide"
+                            />
+                        </a>
+                    </div>
+            
+                    <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
+                        <div style={{textAlign: 'start', padding: '12px'}}>
+                            <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
+                            <h2 style={{color: 'rgba(0,0,0,1)'}}>{article.title}</h2>
+                            <p style={{color: 'rgba(108,107,107)'}}>
+                                {article.description}
+                            </p>
+                        </div>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            )
+        })
+
+        conferences = state.carousal[0].conferences.map(conference => {
+            console.log(conference)
+            return(
+                <Carousel.Item>
+                    <div>
+                        <a href={`/conference/${conference.id}`}>
+                            <img
+                                className="d-block w-100"
+                                src={`http://159.65.230.30${conference.backgroundImage.url}`}
+                                alt="conference slide"
+                            />
+                        </a>
+                    </div>
+            
+                    <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
+                        <div style={{textAlign: 'start', padding: '12px'}}>
+                            <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
+                            <h2 style={{color: 'rgba(0,0,0,1)'}}>{conference.Name}</h2>
+                            <p style={{color: 'rgba(108,107,107)'}}>
+                                {conference.Description}
+                            </p>
+                        </div>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            )
+        })
+       
+    }
+        
+    
 
 
     return (
@@ -40,71 +92,15 @@ export default function LandingPage(props) {
                 <Col xs={8}>
                     <div className='slider' style={{marginTop: '8%'}}>
                         <Carousel className='carousel-indicator'>
-                            <Carousel.Item>
-                            {console.log('=>',state)}
-                                <div>
-                                    <img
-                                    className="d-block w-100"
-                                    src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
-                                    alt="First slide"
-                                />
-                                </div>
-                        
-                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
-                                    <div style={{textAlign: 'start', padding: '12px'}}>
-                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CAPITAL MARKETS</Badge></small>
-                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Impact Investing</h2>
-                                        <p style={{color: 'rgba(108,107,107)'}}>
-                                            Impact investing is growing into an attractive asset class to select asset owners and institutional investors. This program convenes experts and practice 
-                                            leaders on how impact investing is unfolding and how investors are able to develop their strategies effectively by focusing on the market rate of return.
-                                        </p>
-                                    </div>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <div>
-                                    <img
-                                    className="d-block w-100"
-                                    src="https://lh3.googleusercontent.com/-xnevwyyd-QI/XysDP-2Q_hI/AAAAAAAAAiI/Q8Iv3r2fyVoRd9Cc5dw_GggIs2KAlfycgCK8BGAsYHg/s512/Ben_Franklin_Stock_Nums_Keyboard.width-800.wi.width-1200_9LPbtxx%2Bcopy.jpg"
-                                    alt="First slide"
-                                />
-                                </div>
-                        
-                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
-                                    <div style={{textAlign: 'start', padding: '12px'}}>
-                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>CSR & SUSTAINABILITY</Badge></small>
-                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
-                                        <p style={{color: 'rgba(108,107,107)'}}>The Skytop Strategies team is dedicated to crafting thought provoking
-                                            agendas that are diverse, not only in areas of thought and experience,
-                                            but in the broad range of attending speakers.
-                                        </p>
-                                    </div>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <div>
-                                    <img
-                                    className="d-block w-100"
-                                    src="https://slidervilla.com/dbox-lite/files/2014/05/1.jpg"
-                                    alt="First slide"
-                                />
-                                </div>
-                        
-                                <Carousel.Caption className='carousel-caption' style={{height: '36vh'}}>
-                                    <div style={{textAlign: 'start', padding: '12px'}}>
-                                        <small><Badge variant="info" style={{padding: '8px', backgroundColor: 'rgba(38,136,165,1)'}}>ACTIVISM</Badge></small>
-                                        <h2 style={{color: 'rgba(0,0,0,1)'}}>Water & Long-Term Value Summit</h2>
-                                        <p style={{color: 'rgba(108,107,107)'}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    </div>
-                                </Carousel.Caption>
-                            </Carousel.Item>
+                            {articles}
+                            {conferences}
                         </Carousel>
                     </div>
                 </Col>
 
                 <Col xs={4}>
                     <div className='highLightArticle' >
-                        <HighlightArticle state={state} />
+                        <FeatureArticle state={state} />
                     </div>
                 </Col>
             </Row>

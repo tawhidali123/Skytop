@@ -9,11 +9,17 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import MyModal from './MyModal'
+import Moment from 'react-moment'
 
 
 
 export default function Title(props) {
 
+    // ModalState
+    const [modalShow, setModalShow] = useState(false);
+
+    // TIMER
     const renderTime = ({ remainingTime }) => {
         if(remainingTime === 0) {
             return (<p style={{color: 'white'}}>Today is the Event!!</p>)
@@ -36,10 +42,14 @@ export default function Title(props) {
                 {/* Image/counter section */}
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <div className='conference1' >
+                        <div className='conference1' style={{background: `url(http://localhost:1337${props.backgroundImg})`}}>
                             <div style={{}}>
                                 <div style={{}}>
-                                    <Button variant='primary' style={{float: 'right', width: '35%'}}>Register</Button>
+                                    <Button variant='primary' style={{float: 'right', width: '35%'}} onClick={() => setModalShow(true)}>
+                                        Register
+                                    </Button>
+
+                                    <MyModal show={modalShow} onHide={() => setModalShow(false)} />
                                 </div>
                                 <div style={{width: '100%'}}>
                                     <div style={{marginLeft: '10%'}}>
@@ -62,7 +72,12 @@ export default function Title(props) {
                             <div style={{margin: '10% 25% 2% 3%'}}>
                                 <h4>{props.state.Name}</h4>
                                 <p>{props.state.summary}</p>
-                                <small>{props.state.Date} IN {props.state.Address}</small>
+                                <small>
+                                    <Moment format='LLLL'>
+                                        {props.state.Date} 
+                                    </Moment>
+                                </small>
+                                <small> IN {props.state.Address}</small>
                             </div>
                         </div>
                     </Col>
@@ -137,7 +152,7 @@ const Wrapper = styled.div`
  font-family: 'Work Sans', sans-serif;
 
 .conference1 {
-    background: url(http://localhost:1337/uploads/financial_sector_banking_techonology_evolution_stability_bbva_1024x683_83583a7445.jpeg);
+    
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100%;

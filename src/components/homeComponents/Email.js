@@ -34,6 +34,7 @@ export default function Email(props) {
 
 const Wrapper = styled.div`
 font-family: 'Work Sans', sans-serif;
+margin-bottom: 10%;
 
 input[type=text] {
   width: 100%;

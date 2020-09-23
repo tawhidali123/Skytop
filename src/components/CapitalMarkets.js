@@ -6,10 +6,11 @@ import Col from 'react-bootstrap/Col'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
-import ActivismMain from './activismComponents/ActivismMain'
+import CapitalmMain from './capitalComponents/CapitalMain'
 import SideBar from './homeComponents/SideBar'
 
-export default function Activism(props) {
+
+export default function CapitalMarkets(props) {
 
     useEffect(() => {
         window.scrollTo(0,0)
@@ -21,7 +22,7 @@ export default function Activism(props) {
             <Container fluid>
                 <Row>
                     <Col lg={9} style={{borderRight: '1px solid rgba(166,166,166,.4)', borderRadius: '2px'}}>
-                        <ActivismMain />
+                        <CapitalmMain />
                     </Col>
 
                     <Col lg={3}>
