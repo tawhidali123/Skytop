@@ -43,7 +43,7 @@ export default function Main(props) {
                     <Link to={`/article/${item.id}`} style={{textDecoration: 'none'}}>
                         <div style={{marginLeft: '15%'}}>
                             <div style={{marginBottom: '12px'}}>
-                                <Image fluid src={`http://159.65.230.30${item.media[0].url}`} style={{}}/>
+                                <Image fluid src={`https://159.65.230.30${item.media[0].url}`} style={{}}/>
                             </div>
                             <div>
                                 <h2>{item.title}</h2>
@@ -62,7 +62,7 @@ export default function Main(props) {
                 <Row style={{marginBottom: '5%'}}>
                     <Col sm={3}>
                         <div className='imgHolder'>
-                            <img src={`http://159.65.230.30${item.media[0].url}`} />
+                            <img src={`https://159.65.230.30${item.media[0].url}`} />
                         </div>
                     </Col>
                     <Col sm={9}>
@@ -118,7 +118,7 @@ export default function Main(props) {
                     </Col>
                     <Col lg={6}>
                         <Breadcrumb className='breadcrumb'>
-                            <Breadcrumb.Item href="http://localhost:3000">Home</Breadcrumb.Item>
+                            <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                             <Breadcrumb.Item active>Activism</Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>

@@ -18,7 +18,7 @@ export default function AboutMain(props) {
 
                     <Col lg={6}>
                         <Breadcrumb className='breadcrumb'>
-                            <Breadcrumb.Item href="http://localhost:3000">Home</Breadcrumb.Item>
+                            <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                             <Breadcrumb.Item active>About Us</Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>
