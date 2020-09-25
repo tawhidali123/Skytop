@@ -26,7 +26,7 @@ export default function ViewAllArticle(props) {
     let articles
 
     useEffect(() => {
-        fetch(`http://localhost:1337/categories`)
+        fetch(`https://159.65.230.30/categories`)
         .then(res => res.json())
         .then(resp => {
             for(let res of resp) {
@@ -47,7 +47,7 @@ export default function ViewAllArticle(props) {
                         <Link to={`/article/${article.id}`} style={{textDecoration: 'none'}}>
                             <div style={{}}>
                                 <img 
-                                    src={`http://localhost:1337${article.media[0].url}`} 
+                                    src={`https://159.65.230.30${article.media[0].url}`} 
                                     height={'100%'}
                                     width={'100%'}
                                 />
