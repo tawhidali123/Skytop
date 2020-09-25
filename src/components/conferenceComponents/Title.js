@@ -42,7 +42,7 @@ export default function Title(props) {
                 {/* Image/counter section */}
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <div className='conference1' style={{background: `url(http://localhost:1337${props.backgroundImg})`}}>
+                        <div className='conference1' style={{background: `url(https://159.65.230.30${props.backgroundImg})`}}>
                             <div style={{}}>
                                 <div style={{}}>
                                     <Button variant='primary' style={{float: 'right', width: '35%'}} onClick={() => setModalShow(true)}>
@@ -123,7 +123,7 @@ export default function Title(props) {
                                 {
                                     props.imgUrl.map(img => {
                                         return(
-                                            <img src={`http://localhost:1337${img.url}`} />
+                                            <img src={`https://159.65.230.30${img.url}`} />
                                         )
                                     })
                                 }

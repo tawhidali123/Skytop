@@ -30,7 +30,7 @@ export default function UpcomingConf(props) {
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
                     
-                        <div className='conference1' style={{background: `url(http://159.65.230.30${item.backgroundImage.url})`}}>
+                        <div className='conference1' style={{background: `url(https://159.65.230.30${item.backgroundImage.url})`}}>
                         <a href={`/conference/${item.id}`} style={{textDecoration: 'none', color: 'white'}}>
                             <h4>{item.Name}</h4>
                             <p>{item.summary}</p>

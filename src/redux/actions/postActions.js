@@ -6,7 +6,7 @@ export const populateFeatures = posts => ({
 
 export function fetchFeatures() {
     return (dispatch) => {
-        fetch(`http://159.65.230.30/home-page-feature-articles`)
+        fetch(`https://159.65.230.30/home-page-feature-articles`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -24,7 +24,7 @@ export const populateSinglePost = post => ({
 
 export const singlePost = (arg) => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/articles/${arg}`)
+        fetch(`https://159.65.230.30/articles/${arg}`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -43,7 +43,7 @@ export const populateCarousal = post => ({
 
 export const fetchCarousal = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/home-page-carousals`)
+        fetch(`https://159.65.230.30/home-page-carousals`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -64,7 +64,7 @@ export const populateHighlight = post => ({
 
 export const fetchHighlight = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/home-page-highlight-articles`)
+        fetch(`https://159.65.230.30/home-page-highlight-articles`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp[0])
@@ -84,7 +84,7 @@ export const populateMain = post => ({
 
 export const fetchMain = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/home-page-main-articles`)
+        fetch(`https://159.65.230.30/home-page-main-articles`)
         .then(res => res.json())
         .then(resp => {
             console.log(resp)
@@ -103,7 +103,7 @@ export const populateConference = post => ({
 
 export const fetchConference = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/home-page-conferences`)
+        fetch(`https://159.65.230.30/home-page-conferences`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -122,7 +122,7 @@ export const populateActivism = post => ({
 
 export const fetchActivism = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/activism-pages`)
+        fetch(`https://159.65.230.30/activism-pages`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -142,7 +142,7 @@ export const populateCsr = post => ({
 
 export const fetchCsr = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/csr-pages`)
+        fetch(`https://159.65.230.30/csr-pages`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -163,7 +163,7 @@ export const populateInvestment = post => ({
 
 export const fetchInvestment = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/investment-pages`)
+        fetch(`https://159.65.230.30/investment-pages`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -185,7 +185,7 @@ export const populateCapital = post => ({
 
 export const fetchCapital = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/capital-pages`)
+        fetch(`https://159.65.230.30/capital-pages`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -206,7 +206,7 @@ export const populateResilience = post => ({
 
 export const fetchResilience = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/resilience-pages`)
+        fetch(`https://159.65.230.30/resilience-pages`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)
@@ -227,7 +227,7 @@ export const populateAllconference = post => ({
 
 export const fetchAllConference = () => {
     return function(dispatch){
-        fetch(`http://159.65.230.30/conferences`)
+        fetch(`https://159.65.230.30/conferences`)
         .then(res => res.json())
         .then(resp => {
             // console.log(resp)

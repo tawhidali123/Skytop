@@ -31,7 +31,7 @@ export default function Article(props) {
     useEffect(() => {
         window.scrollTo(0, 0)
 
-        fetch(`http://localhost:1337/articles/${slug}`)
+        fetch(`https://159.65.230.30/articles/${slug}`)
         .then(res => res.json())
         .then(resp => {
             setState(resp)  
@@ -48,7 +48,7 @@ export default function Article(props) {
             return (
                 <Row style={{marginBottom: '10%'}}>
                     <Col>
-                        <div className='conference' style={{background: `url(http://localhost:1337${conference.backgroundImage.url})`}}>
+                        <div className='conference' style={{background: `url(https://159.65.230.30${conference.backgroundImage.url})`}}>
                             <a href={`/conference/${conference.id}`} style={{textDecoration: 'none', color: 'white'}}>
                                 <h4>{conference.Name}</h4>
                                 <p>{conference.summary}</p>
