@@ -34,7 +34,7 @@ export default function LandingPage(props) {
                         <a href={`/article/${article.id}`}>
                             <img
                                 className="d-block w-100"
-                                src={`https://159.65.230.30${article.media[0].url}`}
+                                src={`http://localhost:1337${article.media[0].url}`}
                                 alt="article slide"
                             />
                         </a>
@@ -61,7 +61,7 @@ export default function LandingPage(props) {
                         <a href={`/conference/${conference.id}`}>
                             <img
                                 className="d-block w-100"
-                                src={`https://159.65.230.30${conference.backgroundImage.url}`}
+                                src={`http://localhost:1337${conference.backgroundImage.url}`}
                                 alt="conference slide"
                             />
                         </a>
